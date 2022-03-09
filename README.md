@@ -14,10 +14,11 @@ gcc scanner.c -o scanner
 ./scanner [target] [porta_inicial]  [porta_final]
 
 
-# LINGUAGEM PYTHON3
+# LINGUAGEM PYTHON3 
 
 python3 ./port.py [target] -p [port]
 
+versão compativel do python3 [pelo menos pra mim] [3.6]
 
 
 
