@@ -16,7 +16,7 @@ gcc scanner.c -o scanner
 
 # LINGUAGEM PYTHON3 
 
-python3 ./port.py [target] -p [port]
+./port.py [target] -p [port]
 
 versão compativel do python3 [pelo menos pra mim] [3.6]
 
