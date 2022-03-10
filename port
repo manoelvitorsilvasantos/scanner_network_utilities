@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+from sys import argv
+from colorama import init, Fore, Back, Style
+import socket
+
+init()
+GREEN = Fore.GREEN
+RESET = Fore.RESET
+RED = Fore.RED
+def my_help():
+    print('./port.py -h - lista de comandos\n')
+    print('./port.py [target] -p [port_number] - verifica se alguma se a porta está aberta\n')
+#make a socket
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#scanner of port
+def scanner_port(host, port):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    dest = (host, port)
+    result = sock.connect_ex(dest)
+    if result == 0:
+        print(f"{GREEN} {port} is OPEN {RESET}")
+    else:
+        print(f"{RED} {port} is CLOSED {RESET}", end="\r")
+try:
+    host = argv[1]
+except:
+    pass
+try:
+    command = argv[2]
+    if command == '-p':
+        try:
+            port = int(argv[3])
+            scanner_port(host, port)
+            sock.close()
+        except:
+            pass
+    elif command == '-h':
+        my_help()
+except:
+    my_help()
