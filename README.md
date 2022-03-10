@@ -16,7 +16,8 @@ gcc scanner.c -o scanner
 
 # LINGUAGEM PYTHON3 
 
-./port.py [target] -p [port]
+./port [target] -p [port] - verifica se a porta está aberta
+./port -h -exibe uma lista de comandos disponivel no utilitário.
 
 versão compativel do python3 [pelo menos pra mim] [3.6]
 
